@@ -31,7 +31,17 @@
   "contributes": {
     "commands": [
       {
-        "command": "cloak-secrets.helloWorld",
+        "command": "cloak-secrets.hideSecrets",
+        "title": "Cloak Secrets: Hide Secrets"
+      },
+      {
+        "command": "cloak-secrets.hideSecrets",
+        "title": "Cloak Secrets: Show Secrets"
+      },
+      {
+        "command": "cloak-secrets.toggleSecrets",
+        "title": "Cloak Secrets: Toggle Secrets"
+      }
     ]
   },
   "scripts": {
@@ -43,10 +53,10 @@
   "devDependencies": {
     "@types/vscode": "^1.99.0",
     "@types/mocha": "^10.0.10",
-    "@types/node": "20.x",
+    "@types/node": "^22.0.0",
     "@typescript-eslint/eslint-plugin": "^8.28.0",
     "@typescript-eslint/parser": "^8.28.0",
-    "eslint": "^9.23.0",
-    "typescript": "^5.8.2"
+    "eslint": "^9.24.0",
+    "typescript": "^5.8.3"
   }
 }
