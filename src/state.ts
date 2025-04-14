@@ -1,5 +1,6 @@
 import * as vscode from "vscode"
 import { updateStatusBarItem } from "./statusbar"
+import { updateDecorations } from "./decorations"
 
 let extensionContext: vscode.ExtensionContext
 
@@ -19,7 +20,8 @@ export function areSecretsCloaked(): boolean {
 
 export function setSecretsCloaked(cloak: boolean) {
 	console.log("Secrets are now " + (cloak ? "cloaked" : "uncloaked") + ".")
-	return extensionContext.workspaceState
-		.update(SECRETS_CLOAKED_KEY, cloak)
-		.then(() => updateStatusBarItem())
+	return extensionContext.workspaceState.update(SECRETS_CLOAKED_KEY, cloak).then(() => {
+		updateStatusBarItem()
+		updateDecorations()
+	})
 }

@@ -3,7 +3,7 @@
   "displayName": "Cloak Secrets",
   "description": "Cloak hides/shows your secrets in environment files, to avoid accidentally sharing them with everyone who sees your screen.",
   "publisher": "pvinis",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "./out/extension.js",
   "engines": {
     "vscode": "^1.99.0"
@@ -42,7 +42,16 @@
         "command": "cloak-secrets.toggleSecrets",
         "title": "Cloak Secrets: Toggle Secrets"
       }
-    ]
+    ],
+    "configuration": {
+      "properties": {
+        "cloak-secrets.initialValue": {
+          "type": "boolean",
+          "default": true,
+          "description": "Specifies whether the secrets will be hidden by default"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "bun run compile",
