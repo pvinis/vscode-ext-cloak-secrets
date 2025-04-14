@@ -22,7 +22,7 @@
     "Fun"
   ],
   "activationEvents": [
-    "*"
+    "workspaceContains:**/.env*"
   ],
   "extensionKind": [
     "ui",
