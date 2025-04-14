@@ -24,6 +24,10 @@ Just run the command `Cloak: Hide Secrets` from the command palette and all your
 
 ## Settings
 
+| Property                      | Description                          | Default |
+| ----------------------------- | ------------------------------------ | ------- |
+| `cloak-settings.initialValue` | Whether to cloak secrets on startup. | `true`  |
+
 ## Commands
 
 - `Hide Secrets`

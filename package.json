@@ -48,7 +48,7 @@
         "cloak-secrets.initialValue": {
           "type": "boolean",
           "default": true,
-          "description": "Specifies whether the secrets will be hidden by default"
+          "description": "Whether to cloak secrets on startup."
         }
       }
     }

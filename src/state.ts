@@ -9,13 +9,13 @@ const SECRETS_CLOAKED_KEY = "secretsCloaked"
 export function initializeState(context: vscode.ExtensionContext) {
 	extensionContext = context
 
-	if (extensionContext.workspaceState.get(SECRETS_CLOAKED_KEY) === undefined) {
-		extensionContext.workspaceState.update(SECRETS_CLOAKED_KEY, false)
-	}
+	const config = vscode.workspace.getConfiguration("cloak-secrets")
+	const initialValue = config.get("initialValue", true)
+	extensionContext.workspaceState.update(SECRETS_CLOAKED_KEY, initialValue)
 }
 
 export function areSecretsCloaked(): boolean {
-	return extensionContext.workspaceState.get(SECRETS_CLOAKED_KEY, false)
+	return extensionContext.workspaceState.get(SECRETS_CLOAKED_KEY, true)
 }
 
 export function setSecretsCloaked(cloak: boolean) {
